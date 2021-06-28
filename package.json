@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/OriginMing/gulu/issues"
   },
-  "homepage": "https://github.com/OriginMing/gulu#readme"
+  "homepage": "https://github.com/OriginMing/gulu#readme",
+  "dependencies": {
+    "vue": "^2.6.14"
+  }
 }
