@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">{{message}}
+  <g-button></g-button>
+</div>
+
+</body>
+<script src="./node_modules/vue/dist/vue.min.js"></script>
+<script src="./button.js"></script>
+<script>
+  new Vue({
+    el:'#app',
+    data:{
+      message:'hi'
+    }
+
+  })
+</script>
+</html>
