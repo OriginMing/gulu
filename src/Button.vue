@@ -1,7 +1,7 @@
 <template>
-  <button class="g-button" :class="{[`icon-${iconPosition}`]:true}">
-    <g-icon :name="icon" v-if="icon" class="icon"></g-icon>
-    <g-icon name="Loading" class="loading"></g-icon>
+  <button class="g-button" :class="{[`icon-${iconPosition}`]:true}" @click="$emit('myclick')">
+    <g-icon :name="icon" v-if="icon && !loading" class="icon"></g-icon>
+    <g-icon name="Loading" class="loading icon" v-if="loading" ></g-icon>
     <div class="slotContainer">
       <slot></slot>
     </div>
@@ -27,6 +27,10 @@
           console.log(value)
           return value ==='left' || value ==='right'
         } //validator代码优化
+      },
+      loading:{
+        type:Boolean,
+        default:false
       }
     }
   }

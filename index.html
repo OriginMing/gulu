@@ -13,13 +13,13 @@
 </head>
 <body>
 <div id="app">
-  <g-button icon='set' icon-position='right'>
+  <g-button icon='set' icon-position='right' :loading="isLoading1" @myclick=isLoading1=!isLoading1>
     我爱JS
   </g-button>
-  <g-button :icon=`zuo` >
+  <g-button :icon=`zuo` :loading="!isLoading2" @myclick=isLoading2=!isLoading2>
     我爱JS
   </g-button >
-  <g-button :icon-position=`up`>
+  <g-button :icon-position=`left` :loading="isLoading3" @myclick=isLoading3=!isLoading3>
     我爱JS
   </g-button>
   <g-icon name="set"></g-icon>
