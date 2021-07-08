@@ -49,13 +49,11 @@
     }100%{
     transform: rotate(360deg);
          }
-
-    
   }
   #app{
     margin: 20px;
   }
-  :root{
+  html{
     --font-size:14px;
     --button-height:32px;
     --button-bg:white;
@@ -63,7 +61,7 @@
     --border-radius:4px;
     --color:#333;
     --border-color:#999;
-    --border-color-hover:#666 ;
+    --border-color-hover:#666;
   }
   .g-button{
     vertical-align: middle;//解决inline对不齐的问题
