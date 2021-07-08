@@ -15,6 +15,8 @@ new Vue({
 })
 
 import chai from 'chai';
+import spies from 'chai-spies'
+chai.use(spies)
 const exp = chai.expect;
 {
   //将Button对象转为函数
@@ -35,10 +37,10 @@ const exp = chai.expect;
   let tset = constructor.$el.querySelector('svg');
   console.log(window.getComputedStyle(tset))
   //点击事件测试
-  constructor.$on('myclick',function () {
-      console.log("11")
-  })
-constructor.$el.click();
+  const spy =  chai.spy(function () {})
+  constructor.$on('myclick',spy)
+   constructor.$el.click();
+  exp(spy).to.have.been.called();
   // exp(attribute).to.eq('#icon-set');
   // constructor.$el.remove();
   // constructor.$destroy();
