@@ -1,9 +1,31 @@
 <template>
-  <button class="g-button">你好</button>
+  <button class="g-button" :class="{[`icon-${iconPosition}`]:true}">
+    <svg class="icon" v-if="icon">
+      <use :xlink:href=`#icon-${icon}`></use>
+    </svg>
+    <div class="slotContainer">
+      <slot></slot>
+    </div>
+  </button>
 </template>
 
 <script>
   export default {
+    // props:["icon","iconPosition"]
+    props:{
+      icon:{},
+      iconPosition:{
+        default:'left',
+        type:String,
+        validator: function (value) {
+          if (value !== 'left' && value !== 'right') {
+            return false
+          } else {
+            return true
+          }
+        }
+      }
+    }
   }
 </script>
 
@@ -28,9 +50,13 @@
     --border-color-hover:#666 ;
   }
   .g-button{
+    vertical-align: middle;//解决inline对不齐的问题
     font-size: var(--font-size);
     height: var(--button-height);
-    padding: 0 1em;
+    padding: 2px 1em;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     border: 1px solid var(--border-color);
     background: var(--button-bg);
     border-radius: var(--border-radius);
@@ -42,6 +68,25 @@
     }
     &:focus{
       outline: none;
+    }
+    .icon {
+      width: 1em; height: 1em; vertical-align: -0.15em;
+    }
+    > .icon{
+      order:1;
+      margin-left: 0.1em;
+    }
+    > .slotContainer{
+     order: 2;
+    }
+    &.icon-right{
+      .icon{
+        order:2;
+        margin-right: 0.1em;
+      }
+      > .slotContainer{
+        order: 1;
+      }
     }
   }
 </style>
