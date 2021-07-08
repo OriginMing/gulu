@@ -17,13 +17,17 @@
       iconPosition:{
         default:'left',
         type:String,
-        validator: function (value) {
-          if (value !== 'left' && value !== 'right') {
-            return false
-          } else {
-            return true
-          }
-        }
+        // validator: function (value) {
+        //   if (value !== 'left' && value !== 'right') {
+        //     return false
+        //   } else {
+        //     return true
+        //   }
+        // }
+        validator(value){
+          console.log(value)
+          return value ==='left' || value ==='right'
+        } //validator代码优化
       }
     }
   }
