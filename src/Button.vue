@@ -37,12 +37,7 @@
 </script>
 
 <style scoped lang="scss">
-  *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    --border-color:#eee;
-  }
+
   @keyframes  spin{
     0%{
       transform: rotate(0deg);
@@ -52,16 +47,6 @@
   }
   #app{
     margin: 20px;
-  }
-  html{
-    --font-size:14px;
-    --button-height:32px;
-    --button-bg:white;
-    --button-active-bg:#eee;
-    --border-radius:4px;
-    --color:#333;
-    --border-color:#999;
-    --border-color-hover:#666;
   }
   .g-button{
     vertical-align: middle;//解决inline对不齐的问题
