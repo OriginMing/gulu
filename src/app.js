@@ -22,7 +22,8 @@ const exp = chai.expect;
   //创建Button的实例//给Button实例传参
   let constructor = new Constructor({
     propsData:{
-      icon:'set'
+      icon:'set',
+      loading:true,
     }
   });
   //将Button挂载到页面上
@@ -31,6 +32,15 @@ const exp = chai.expect;
   let docu =  constructor.$el.querySelector('use');
   console.log(docu.getAttribute('xlink:href'))
   let attribute = docu.getAttribute('xlink:href')
-  exp(attribute).to.eq('#icon-set');
+  let tset = constructor.$el.querySelector('svg');
+  console.log(window.getComputedStyle(tset))
+  //点击事件测试
+  constructor.$on('myclick',function () {
+      console.log("11")
+  })
+constructor.$el.click();
+  // exp(attribute).to.eq('#icon-set');
+  // constructor.$el.remove();
+  // constructor.$destroy();
 
 }
